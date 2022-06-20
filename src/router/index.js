@@ -5,10 +5,16 @@ import {
 import Home from '../views/Home.vue'
 
 const routes = [{
-  path: '/',
-  name: 'home',
-  component: Home
-}, ]
+    path: '/',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/recipe/:slug',
+    name: 'Recipe',
+    component: () => import('../views/Recipe.vue')
+  }
+]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
